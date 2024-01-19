@@ -1,0 +1,19 @@
+.search-btn {
+  padding: 5px 15px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 35vh;
+  padding-top: 0px;
+  margin-top: 40px;
+  width: 100%;
+  background-color: transparent;
+}
+.video-img {
+  width: 140px;
+}

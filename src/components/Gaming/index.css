@@ -1,0 +1,11 @@
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+  padding-top: 0px;
+  margin-top: 40px;
+  width: 100%;
+  background-color: transparent;
+}
