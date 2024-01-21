@@ -14,7 +14,7 @@ export const HomeFailureContainer = styled.div`
 `
 
 export const HomeFailureImg = styled.img`
-  height: 45vh;
+  width: 45vw;
 `
 
 export const Heading1 = styled.h1`

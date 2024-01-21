@@ -15,19 +15,22 @@ export const MenuSectionContainer = styled.ul`
 `
 export const MenuDiv = styled.div`
   margin-top: 0px;
-  height: 100vh;
+  min-height: 100vh;
   border-radius: 6x;
   align-self: stretch;
   padding: 0px;
   background-color: ${props => props.bgColor};
   color: ${props => props.color};
-  width: 150px;
+  width: 250px;
+  min-width: 160px;
+  //   flex-grow: 1;
+  flex-shrink: 1;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  @media (max-width: ${'500px'}) {
-    width: 130px;
-  }
+  //   @media (max-width: ${'500px'}) {
+  //     width: 130px;
+  //   }
 `
 
 export const MenuLinks = styled(Link)`
@@ -37,16 +40,25 @@ export const MenuLinks = styled(Link)`
   margin: 0px;
   align-self: flex-start;
   padding: 0px;
-  width: auto;
+  width: 100%;
 `
 
 export const MenuItem = styled.li`
   display: flex;
-  background-color: ${props => (props.isActive ? '#606060' : 'transparent')};
+  background-color: ${props => {
+    console.log('isDArk', props.isDark)
+    if (props.isDark) {
+      return props.isActive ? '#383838' : 'transparent'
+    }
+    return props.isActive ? '#e2e8f0' : 'transparent'
+  }};
   padding: 15px;
   justify-content: flex-start;
+  padding-right: 0px;
   align-items: center;
+  margin: 0px;
   height: 50px;
+  width: 100%;
   color: ${props => props.color};
 `
 export const Para = styled.p`

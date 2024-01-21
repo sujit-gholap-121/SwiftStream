@@ -86,6 +86,7 @@ class HomeVideosContainer extends Component {
 
   render() {
     const {displayStatus, homeVideosList, fetchVideoStatus, search} = this.state
+    console.log(fetchVideoStatus)
     return (
       <AppContext.Consumer>
         {value => {
@@ -131,7 +132,19 @@ class HomeVideosContainer extends Component {
                     <FaSearch />{' '}
                   </button>
                 </SearchContainer>
-
+                {fetchVideoStatus === 'loading' && (
+                  <div
+                    className="loader-container"
+                    data-testid="loader"
+                    height="40"
+                    width="40"
+                  >
+                    <Loader type="ThreeDots" color="#ffffff" />
+                  </div>
+                )}
+                {fetchVideoStatus === 'failed' && (
+                  <HomeFailureView fetchVideos={this.fetchVideos} />
+                )}
                 {fetchVideoStatus === 'success' && (
                   <VideosList>
                     {homeVideosList.map(ele => (
@@ -143,22 +156,10 @@ class HomeVideosContainer extends Component {
                     ))}
                   </VideosList>
                 )}
-                {homeVideosList.length === 0 && (
-                  <HomeEmptySearch fetchVideos={this.fetchVideos} />
-                )}
-                {fetchVideoStatus === 'failed' && (
-                  <HomeFailureView fetchVideos={this.fetchVideos} />
-                )}
-                {fetchVideoStatus === 'loading' && (
-                  <div className="loader-container" data-testid="loader">
-                    <Loader
-                      type="ThreeDots"
-                      color="#ffffff"
-                      height="50"
-                      width="50"
-                    />
-                  </div>
-                )}
+                {fetchVideoStatus === 'success' &&
+                  homeVideosList.length === 0 && (
+                    <HomeEmptySearch fetchVideos={this.fetchVideos} />
+                  )}
               </VideosListContainer>
             </HomeContainer>
           )

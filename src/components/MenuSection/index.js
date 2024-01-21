@@ -19,18 +19,20 @@ const MenuSection = () => (
   <AppContext.Consumer>
     {value => {
       const {isDark, updateActiveTab, activeTab} = value
+      console.log('daark', isDark)
       const onClickUpdateTab = e => {
         updateActiveTab(e.target.textContent)
       }
       return (
         <MenuDiv
-          bgColor={isDark ? ' #181818' : '#ffffff'}
-          color={isDark ? '#f9f9f9' : ' #181818'}
+        //   bgColor={isDark ? '#181818' : '#ffffff'}
+        //   color={isDark ? '#f9f9f9' : '#e2e8f0'}
         >
           <MenuSectionContainer>
             <MenuLinks to="/">
               <MenuItem
                 isActive={activeTab === 'Home'}
+                isDark={isDark}
                 color={isDark ? '#ffffff' : ' #181818'}
                 value="Home"
                 onClick={onClickUpdateTab}
@@ -45,6 +47,7 @@ const MenuSection = () => (
               <MenuItem
                 color={isDark ? '#d7dfe9' : ' #181818'}
                 value="Trending"
+                isDark={isDark}
                 isActive={activeTab === 'Trending'}
                 onClick={onClickUpdateTab}
               >
@@ -58,6 +61,7 @@ const MenuSection = () => (
               <MenuItem
                 color={isDark ? '#d7dfe9' : ' #181818'}
                 value="Gaming"
+                isDark={isDark}
                 isActive={activeTab === 'Gaming'}
                 onClick={onClickUpdateTab}
               >
@@ -70,8 +74,9 @@ const MenuSection = () => (
             <MenuLinks to="/saved-videos">
               <MenuItem
                 color={isDark ? '#d7dfe9' : ' #181818'}
-                value="SavedVideos"
-                isActive={activeTab === 'SavedVideos'}
+                value="Saved Videos"
+                isDark={isDark}
+                isActive={activeTab === 'Saved Videos'}
                 onClick={onClickUpdateTab}
               >
                 <IconContext.Provider value={{color: '#ff0000', size: 30}}>

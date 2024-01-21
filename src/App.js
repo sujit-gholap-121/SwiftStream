@@ -14,8 +14,8 @@ import NotFound from './components/NotFound'
 
 class App extends Component {
   state = {
-    isDark: true,
-    activeTab: '',
+    isDark: false,
+    activeTab: 'Home',
     savedVideos: [],
   }
 

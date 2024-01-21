@@ -6,7 +6,6 @@ const MainHomeContainer = styled.div`
   display: flex;
   background-color: ${props => props.bgColor};
   color: ${props => props.color};
-  box-sizing: content-box;
-  width: 100%;
+  width: auto;
 `
 export default MainHomeContainer

@@ -11,7 +11,7 @@ export const BodyContainer = styled.div`
 const homeStyle = styled.div`
   display: flex;
   align-items: stretch;
-  width: 100vw;
+  width: auto;
   padding: 0px;
   height: 100%;
   background-color: ${props => props.bgColor};

@@ -10,16 +10,16 @@ const Home = () => (
     {value => {
       const {isDark} = value
       return (
-        <div className="div-outer">
+        <>
           <Header />
           <MainHomeContainer
-            bgColor={isDark ? '#181818' : '#f9f9f9 '}
+            bgColor={isDark ? '#181818' : '#f9f9f9'}
             color={isDark ? '#f9f9f9' : '#181818'}
           >
             <MenuSection />
             <HomeVideosContainer />
           </MainHomeContainer>
-        </div>
+        </>
       )
     }}
   </AppContext.Consumer>

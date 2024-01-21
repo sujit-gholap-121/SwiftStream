@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
   padding: 20px;
-  flex-shrink: 1;
-  width: auto;
+  width: 100%;
+  margin: 0px;
   background-color: ${props => props.bgColor};
   color: ${props => props.color};
   @media (max-width: ${'500px'}) {
